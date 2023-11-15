@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var count = 0;
+            var l = 0;
+            $("div").mouseenter(function () {
+                $(this).animate({
+                    transform: "translateZ(100px)"
+                }, 1000);
+
+                // 有点意思/xyx
+                count += 720;
+                l += 800;
+                if (l > 800) { l = 0 };
+                if (count > 720) { count = 0 }
+                $(this).css({
+                    transform: "rotateY(" + count + "deg)  ",
+
+                    left: l,
+                })
+                console.log(count)
+            })
+        })
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: url(../images/timg.jpg);
+            perspective: 150;
+            -webkit-perspective: 150;
+        }
+
+        div {
+
+            /* transform: translateZ(100px); */
+            transform: rotateX(45deg);
+            position: relative;
+            left: 0px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border-top: bisque 50px solid;
+            border-bottom: steelblue 50px solid;
+            border-left: blue 50px solid;
+            border-right: chocolate 50px solid;
+
+            /* 使倾斜20度
+            transform: skew(20deg); */
+            /* 使旋转10度 */
+            /* transform: rotate(10deg); */
+            /* 放大2倍 */
+            /* transform: scale(2); */
+            transition: all 1.5s;
+            background-color: yellow;
+        }
+
+        /* div:hover {
+            transform: rotate(360deg);
+            left: 800px;
+        } */
+    </style>
+</head>
+
+<body bgcolor="#666">
+    <div>rotateY是怎么旋转的</div>
+</body>
+
+</html>
