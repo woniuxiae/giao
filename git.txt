@@ -12,7 +12,7 @@ ssh -T git@github.com
  -就是在git 中设置当前使用的用户是谁
  
  -命令：
-       + 配置用户名：git config --global user.name "woniuxiae"
+       + 配置用户名：git config --global user.name "xxxxxx"
           
        + 配置邮箱：git config --global user.email "3462588024@qq.com"
 
@@ -21,12 +21,12 @@ ssh -T git@github.com
  git add README.md           (README.md如果本地没有就新建一个)
  git commit -m "first commit"
  git branch -M main
- git remote add origin git@github.com:woniuxiae/GithubUsageTest.git
+ git remote add origin git@github.com:<username>/<depotname>.git
  git push -u origin main
 ####example ::==========================================
 
 ##本地连接github仓储
- -1.git remote add [custom_name] git@github.com:woniuxiae/giao.git  
+ -1.git remote add [custom_name] git@github.com:<username>/<depotname>.git
  -2.git remote rm custom_name                                       
 
 ##把代码提交存储到.git仓储中
@@ -48,6 +48,8 @@ ssh -T git@github.com
   - 可以用来查看当前的代码有没有被放到仓储中去
   + git status
   + git remote -v
+   -git branch  
+    +查看分支
 
 ##查看日志 (只能查看hard之前的）
  -git log 查看历史提交的日志
@@ -99,7 +101,9 @@ ssh -T git@github.com
    +删除dev分支
 
 ##提交代码到github(当作git服务器来用)
-  -git push 地址 master   地址通过注册github账号时获得
+  -git push origin master   地址通过注册github账号时获得
    +把本地的master分支上传到github上的master分支上
+
+   --allow-unrelated-histories
 
   
