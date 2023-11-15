@@ -22,8 +22,8 @@ ssh -T git@github.com
  git commit -m "first commit"
  git branch -M main
  git remote add origin git@github.com:<username>/<depotname>.git
- git push -u origin main
-####example ::==========================================
+ git push -u origin main 
+####example ::========================================================
 
 ##本地连接github仓储
  -1.git remote add [custom_name] git@github.com:<username>/<depotname>.git
