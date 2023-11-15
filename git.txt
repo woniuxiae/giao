@@ -1,0 +1,105 @@
+ 初始化git仓储/(仓库）
+
+ -在项目目录右键打开 git bash
+ -命令：git init  
+ -这个仓库会存放 git 对我们项目代码进行备份的文件
+
+
+
+##自报家门
+
+ssh -T git@github.com
+ -就是在git 中设置当前使用的用户是谁
+ 
+ -命令：
+       + 配置用户名：git config --global user.name "woniuxiae"
+          
+       + 配置邮箱：git config --global user.email "3462588024@qq.com"
+
+####example ::==========================================
+ git init
+ git add README.md           (README.md如果本地没有就新建一个)
+ git commit -m "first commit"
+ git branch -M main
+ git remote add origin git@github.com:woniuxiae/GithubUsageTest.git
+ git push -u origin main
+####example ::==========================================
+
+##本地连接github仓储
+ -1.git remote add [custom_name] git@github.com:woniuxiae/giao.git  
+ -2.git remote rm custom_name                                       
+
+##把代码提交存储到.git仓储中
+
+ -1.把代码放到仓储的门口
+  
+  + git add ./文件路径        把指定的文件添加到大门口
+
+  + git add ./                 把所有的修改的文件添加到大门口
+
+ —2.把仓储门口的代码放到里面的房间中去
+ 
+  +git commit -m "这是对这次添加的东西的说明"
+
+  + git commit --all -m"一些说明"  把所有修改的文件放到房间去
+
+
+##状态查询
+  - 可以用来查看当前的代码有没有被放到仓储中去
+  + git status
+  + git remote -v
+
+##查看日志 (只能查看hard之前的）
+ -git log 查看历史提交的日志
+
+ -git log --oneline 可以看到简洁版的日志
+
+
+
+
+## 回退到指定的版本
+
+ -git reset --hard Head~0 最新版
+
+ -git reset --hard Head~1  最新版的上一个版本
+
+ -git reset --hard 版本号
+  +可以通过版本号精确回到指定的版本
+
+ -git reflog
+  +可以看到历史切换版本的记录，可以看到所有提交的版本号
+
+
+##分支
+ -默认是有个主分支master
+
+
+##创建分支
+
+ -git branch dev
+   +创建了一个dev分支
+   +在刚创建时dev分支里的东西和master分支里的东西是一样的
+
+##切换分支
+
+ -git checkout dev
+   +切换到dev分支
+
+ -git branch 
+    +查看分支
+
+##合并分支
+ -git merge dev
+   +把当前分支与指定的分支dev 进行合并
+
+ -合并时如果出现了冲突，需要手动处理冲突
+
+
+ -git branch -d dev
+   +删除dev分支
+
+##提交代码到github(当作git服务器来用)
+  -git push 地址 master   地址通过注册github账号时获得
+   +把本地的master分支上传到github上的master分支上
+
+  
